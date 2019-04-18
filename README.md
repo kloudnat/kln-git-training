@@ -423,4 +423,4 @@ The below figure explain the result of that merge
 Author Information
 ------------------
 
-Visquis-MIAFFOSSA @Mediametrie
+Visquis-MIAFFOSSA @Groopy
