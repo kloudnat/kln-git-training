@@ -132,7 +132,7 @@ Your demo project is now initialised locally. Move to your project derectory.
 As you initialized you rrepo locally, you need to indicate where you remote repos will be hosted.
 
 ```
-      $ git remote add origin http://scm.ul.mediametrie.fr/devops/demo.git
+      $ git remote add origin https://gitlab.com/o360-training/collaborate/o3-git-gitlab.git
 ```
     **[add the first file to repo `demo`](#first-file-to-demo)**
 
