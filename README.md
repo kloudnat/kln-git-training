@@ -5,6 +5,7 @@ It will be used to explain basics of Git and Gitlab.
 ## Contents
 
 **[Git](#git)**
+
 * [What is Version/source Control ?](#what-is-version-source-control)
 * [What is Git ?](#what-is-git)
 
@@ -23,13 +24,16 @@ It will be used to explain basics of Git and Gitlab.
 * [comaparing, Branching & Merging](#branching-comaparing-merging)
 
 ## Development
+
 **[Git](#git)**
 * [What is Version Control ?](#what-is-version-control)
 
 A version control is a way to historize your code modification progressively.
 
 An illustration below
-![Collaborative development tracking history](/pics/Hisstory-tracking-2.png)
+
+|![Collaborative development tracking history](/pics/Hisstory-tracking-2.png)|
+|----------------------------------------------------------------------------|
 
 There are 02 types of Version Control:
 
@@ -58,7 +62,8 @@ Have a look on an illustration below
 
 Local Git Workflow
 
-![Local Git Workflow](/pics/local-git-workflow.png)
+|![Local Git Workflow](/pics/local-git-workflow.png)|
+|---------------------------------------------------|
 
 
   **[Git commands & Local repository](#git-commands-local-repository)**
@@ -94,7 +99,8 @@ The first one explains with the associated git command, how files moves from *lo
 
 Git Workflow - From Local to remote
 
-![Git Workflow - From Local to remote](/pics/git-workflow.png)
+|![Git Workflow - From Local to remote](/pics/git-workflow.png)|
+|--------------------------------------------------------------|
 
 
 The second one explains with the associated git command, members of the same project can commonly use the the *remote repo*.
@@ -102,28 +108,40 @@ The second one explains with the associated git command, members of the same pro
 
 Team collaboration -  Workflow
 
-![Team collaboration -  Workflow](/pics/team-remote-workflow.png)
+|![Team collaboration -  Workflow](/pics/team-remote-workflow.png)|
+|-----------------------------------------------------------------|
 
   * [Demo](#demo)
+
     **[create a project called `demo`](#create-a-project-called-demo)**
 
 Before starting, move `*change directory*` to the parent directory that will host your project directory.
 
-      * `git init demo`
+```
+      $ git init demo
+```
 
 Your demo project is now initialised locally. Move to your project derectory.
-      * `cd demo`
 
-    **[add remote repo to `demo`](#create-a-project-called-demo)**
+```
+      $ cd demo
+```
+
+**[add remote repo to `demo`](#add-remote-repo-to-demo)**
+
 As you initialized you rrepo locally, you need to indicate where you remote repos will be hosted.
 
-      * `git remote add origin http://scm.ul.mediametrie.fr/devops/demo.git`
-
+```
+      $ git remote add origin http://scm.ul.mediametrie.fr/devops/demo.git
+```
     **[add the first file to repo `demo`](#first-file-to-demo)**
+
 Use any command from your choice to create a file README.md, Then check the status of your workspace.
 
-      * `touch README.md`
-      * `git status`
+```
+      $ touch README.md
+      $ git status
+```
 
 Your repo status currently idicates the following:
 
@@ -132,9 +150,12 @@ Your repo status currently idicates the following:
 - And that you have nothing in the *staging area*
 
     **[add text to README.md](#add-text-to-readme.md)**
+
 Use any text editor from your choice to add text to README.md, Then check the status of your workspace.
 
-      * `vim README.md`
+```
+      $ vim README.md
+```
 
 Add `# Trainig Git` as first line in `READMEmd` then add the file to the *staging area*
 
@@ -146,7 +167,9 @@ Add `## Introduction` as second line in `READMEmd` and check your repo status ag
 - The new file `README.md` is now in the staging with the *first line* you added before.
 - And that you have *new changes - the second line* not yet staged.
 
-      * `git status`
+```
+      $ git status
+```
 
     **[Commit and push](#commit-push)**
 
@@ -154,11 +177,17 @@ Use `commit` and `push` to add chnages locally and remotely.
 
 - Add your last change to the staging area
 - `Commit` your chnages to the *local repository*
-      * `git commit`
+```
+      $ git commit
+```
 - Check what you just commited with `git log`
-      * `git log -u`
+```
+      $ git log -u
+```
 - Finally `push` your changes to the remote repos (on *default branch*), to share your local work with your colleagues or project team.
-      * `git push origin master`
+```
+      $ git push origin master
+```
 
     **[Ongoing changes - diff](#ongoing-chnages-diff)**
 
@@ -168,12 +197,16 @@ Use any text editor from your choice to add text to README.md, Then check the di
 - Add the introduction description
 - Use `git add` to check the difference between the content before and now
 
-      * `git diff`
+```
+      $ git diff
+```
 
 - Add the changes to the staging area the commit it to te local repos
 - You can now check your loacl repos log history to see what changes you made at each commit
 
-      * `git log -u`
+```
+      $ git log -u
+```
 
 - You can now push changes to the remote repos
 
@@ -193,7 +226,8 @@ Use any text editor from your choice to add text to README.md, Then check the di
 
 - You can use `git difftool` to visualy show the difference as follow
 
-![Working Directory vs Staging Area (HEAD)](/pics/demo-workspace-vs-staging.png)
+|![Working Directory vs Staging Area (HEAD)](/pics/demo-workspace-vs-staging.png)|
+|--------------------------------------------------------------------------------|
 
 
     **[Working Directory vs Local Repos](#working-directory-local-repos)**
@@ -204,7 +238,8 @@ Use any text editor from your choice to add text to README.md, Then check the di
 
 - You can use `git difftool HEAD` to visualy show the difference as follow
 
-![Working Directory vs Local Repos](/pics/demo-workspace-vs-local-repos.png)
+|![Working Directory vs Local Repos](/pics/demo-workspace-vs-local-repos.png)|
+|----------------------------------------------------------------------------|
 
 
     **[Staging Area vs Local Repos](#staging-area-local-repos)**
@@ -215,7 +250,8 @@ Use any text editor from your choice to add text to README.md, Then check the di
 
 - You can use `git difftool --staged HEAD` to visualy show the difference as follow
 
-![Staging vs Local Repos](/pics/demo-staging-vs-local-repos.png)
+|![Staging vs Local Repos](/pics/demo-staging-vs-local-repos.png)|
+|----------------------------------------------------------------|
 
 
     **[Local master vs remote master branch](#local-master-vs-remote-master-branch)**
@@ -236,7 +272,8 @@ Branch is a parralel version of your project. The default branch *master* is cre
 
 Our *demo* project is currently on a single branch called *master* as follow
 
-![Default branch](/pics/demo-branching-default.png)
+|![Default branch](/pics/demo-branching-default.png)|
+|---------------------------------------------------|
 
 ### Create new branch *feature_0*
 
@@ -246,30 +283,42 @@ To create a new branch, make sure:
 
 Then, use the following command to create the new branch called *feature_0*
 
-      * `git branch feature_0`
+```
+      $ git branch feature_0
+```
 
 You can then check your new branch have been created correctly by listing all branches
 
-      * `git branch -a`
+```
+      $ git branch -a
+```
 
 You can now switch to the new branch then and print out your current branch once more to make sure you switched
 
-      * `git checkout feature_0`
-      * `git branch`
+```
+      $ git checkout feature_0
+      $ git branch
+````
 
 You can create and switch to the new branch in a single command
 
-      * `git checkout -b feature_0`
+```
+      $ git checkout -b feature_0
+```
 
-![New branch *feature_0*](/pics/demo-branching.png)
+|![New branch *feature_0*](/pics/demo-branching.png)|
+|---------------------------------------------------|
 
 When you just created a new branch, the source and the new branch point to the same commit.
 
 From the new branch, run the following command to print out the the state of your pointer
 
-      * `git log --oneline --decorate`
+```
+      $ git log --oneline --decorate
+```
 
-![Pointer Decorate](/pics/demo-branch-decorate.png)
+|![Pointer Decorate](/pics/demo-branch-decorate.png)|
+|---------------------------------------------------|
 
 ### Commit on new branch *feature_0* and Merge
 
@@ -279,14 +328,17 @@ Add new section to the readme called *Demo feature 0* then add and commit to the
 
 On branch `feature_0`, print out the commit history
 
-      * `git log --oneline --decorate`
+```
+      $ git log --oneline --decorate
+```
 
 The above commands prints out the state of the new branch:
 
 - We remark that the `HEAD` is now pointing only on the new branch
 - The commit before is pointing to the master
 
-![First commit on new branch](/pics/first-commit-new-branch.png)
+|![First commit on new branch](/pics/first-commit-new-branch.png)|
+|----------------------------------------------------------------|
 
 #### Merge `feature_0` to `master` in fast forward way
 
@@ -294,13 +346,18 @@ Switch back to the branch `master`
 
 - Print out the difference between `master` and `feature_0`
 
-      * `git difftool master feature_0`
+```
+      $ git difftool master feature_0
+```
 
-![Branches diff](/pics/branches-diff.png)
+|![Branches diff](/pics/branches-diff.png)|
+|-----------------------------------------|
 
 - Now, use `git merge` to merge `feature_0` to `master`
 
-      * `git merge master feature_0`
+```
+      $ git merge master feature_0
+```
 
 Git prints out:
 
@@ -310,7 +367,9 @@ Git prints out:
 
 Check the state of your pointer once more
 
-      * `git log --oneline --decorate`
+```
+      $ git log --oneline --decorate
+```
 
 You remark that the `HEAD` on `master` moved to the last commit from merged branch.
 
@@ -323,23 +382,31 @@ From the branch `master` create the new branche called `feature_1` and switch to
 
 - Print out the log history on `feature_1` then analyse
 
-      * `git log --oneline --decorate --graph`
+```
+      $ git log --oneline --decorate --graph
+```
 
 - Now, use `git merge` to merge `feature_1` to `master`
 
  First, switch back to the `master` then run the following command
 
-      * `git merge master feature_1 --no-ff`
+```
+      $ git merge master feature_1 --no-ff
+```
 
 The below figure explain the `--no-ff` option used
 
-![No Fast Forward Merge](/pics/no-ff-merge.png)
+|![No Fast Forward Merge](/pics/no-ff-merge.png)|
+|-----------------------------------------------|
 
 Check the state of your log history and observe
 
-      * `git log --graph --decorate --oneline --all`
+```
+      $ git log --graph --decorate --oneline --all
+```
 
-![No Fast Forward Merge eg](/pics/no-ff-merge-eg.png)
+|![No Fast Forward Merge eg](/pics/no-ff-merge-eg.png)|
+|-----------------------------------------------------|
 
 Git prints out:
 
@@ -350,7 +417,9 @@ Git prints out:
 
 Delete both feature branches now
 
-      * `git branch -D feature_0 feature_1`
+```
+      $ git branch -D feature_0 feature_1
+```
 
 
 #### Parallel Merge - merge parallel commits from two branches (`parallel-branch` to `master`
@@ -363,60 +432,185 @@ Switch back on branch `master` and add contribution instructions to the readme t
 
 Branch `master` is now in the below state
 
-![Parallel Commit on master](/pics/parallel-commits-master.png)
+|![Parallel Commit on master](/pics/parallel-commits-master.png)|
+|---------------------------------------------------------------|
 
 - Print out the log history on `master` then notice that you have *parralel commits* on both branches now
 
-      * `git log --oneline --graph --decorate --all`
+```
+      $ git log --oneline --graph --decorate --all
+```
 
 The below figure shows both commits on branches
 
-![Parallel Commit on both branches](/pics/parallel-commits-both-branches.png)
+|![Parallel Commit on both branches](/pics/parallel-commits-both-branches.png)|
+|-----------------------------------------------------------------------------|
 
 
 - Now, use `git merge` to merge `parallel-branch` to `master`
 
 
-      * `git merge master parallel-branch`
+```
+      $ git merge master parallel-branch
+```
 
 The below figure explain the result of that merge
 
-![Parallel Commits Merge](/pics/merge-parralel-commits.png)
+|![Parallel Commits Merge](/pics/merge-parralel-commits.png)|
+|-----------------------------------------------------------|
 
-![Parallel Commits Merge](/pics/parallel-commits-both-branches-merge.png)
+|![Parallel Commits Merge](/pics/parallel-commits-both-branches-merge.png)|
+|-------------------------------------------------------------------------|
 
 
-#### Merge Conflicts
+#### Merge with Conflicts
 
-From the branch `master` create the new branche called `parallel-branch` and switch to that new branch
+While merging, git checks conflict changes on commits from branches (`master` ad `feature` for example) you are merging. Git will notify in case of conflicts detected. You should resolve conflicts by choosing the right version of the file you want to keep, then git will discard the wrong one.
 
-- Add the new file teams.txt with "# Teams ## IP ## INFRA ## INFRIP" as content
+The following figure illustrates the case you can get conflicts. On that figure, the same file has been modified on different branches (`master` ad `feature`), and result on conflicts while merging.
 
-Switch back on branch `master` and add contribution instructions to the readme then commit
+|![Conflicts Illustration](/pics/conflict-changes-commits.png)|
+|-------------------------------------------------------------|
+
+From branch `master`, create a new branch `update-info` and switch to that branch. Update infos in certain files (README.md and teams.txt) on that branch then commit changes to the local repos
+
+Switch back on branch `master` and update infos in the same files you edited above, then commit to the local repos.
+
+There are conflict changes made from two different branches of your project now.
+
+Try merging both branches now.
+
+Git will reject the merge request due to conflicts from both branches, then add the *conflict marquers* to the corresponding files. Bellow is our illustration capture
+
+|![Git output conflicts from MR](/pics/conflict-output-from-mr.png)|
+|------------------------------------------------------------------|
+
+
+We have to fix conflicts before git can merge. To fix that, we can use *conflict marquers* included in modified files
+
+|![Git Fix Conflicts with Conflict Marquers](/pics/conflict-marquers.png)|
+|------------------------------------------------------------------------|
+
+As shown above, we can easily fix conflicts by choosing the right version of our file.
+
+After fixing the conflicts, commit again to add the final version to the local repos
+
+We should now have the illustration below after resolving conflicts
+
+|![Conflicts Resolved](/pics/conflict-changes-commits-resolved.png)|
+|------------------------------------------------------------------|
+
+Now, make sure your local repos `master branch` is up to date, then push your changes to the remote repos
+
+```
+      $ git pull origin master
+      $ git push origin master
+```
+
+
+### Rebasing in Git
+
+Rebasing in git is the process of moving a sequence of commits to a new base commit.
+
+The following figure illustrates rebasing of `master` branch into `staging` branch.
+
+|![Rebase Illustration](/pics/git-rebase.png)|
+|--------------------------------------------|
+
+#### Reabse without conflicts
+
+During the rebase operation, git checks changes made on files from both branches. When conflicts are detected, git notifys us and prompt fro resolution.
+
+In this section, we are going to test a simple rebase without conflicts.
+
+From branch `master`, create a new branch called `staging` then switch on it.
+
+From that new branch, modify a file by adding a new section for example, then save and commit
+
+
+Switch back on branch `master` and edit the README.md file then commit
 
 Branch `master` is now in the below state
 
-![Parallel Commit on master](/pics/parallel-commits-master.png)
+|![Parallel Commit on master](/pics/demo-rebase-prep-master-branch.png)|
+|----------------------------------------------------------------------|
 
-- Print out the log history on `master` then notice that you have *parralel commits* on both branches now
+Switch to `staging` then rebase the `master`
 
-      * `git log --oneline --graph --decorate --all`
+```
+      $ git checkout staging
+      $ git rebase master
+```
 
-The below figure shows both commits on branches
+- Print out the log history on `staging` then notice that commits from `master` are now in the base (*parent commits*) for `staging`
 
-![Parallel Commit on both branches](/pics/parallel-commits-both-branches.png)
+```
+      $ git log --oneline --graph --decorate --all
+```
+
+The below figure shows the result
+
+|![Simple rebase proof](/pics/demo-rebase-proof.png)|
+|---------------------------------------------------|
 
 
-- Now, use `git merge` to merge `parallel-branch` to `master`
+#### Reabse with conflicts
 
+In this section, we are going to test rebase with conflicts.
 
-      * `git merge master parallel-branch`
+- From branch `master`, edit the README file to create a marker before conflict then commit.
 
-The below figure explain the result of that merge
+- From `master`, create a branch called `rebase-conflict`, then add some chnages that will conflict and commit
 
-![Parallel Commits Merge](/pics/merge-parralel-commits.png)
+- Switch back on branch `master` and edit the README.md file to create conflict and commit
 
-![Parallel Commits Merge](/pics/parallel-commits-both-branches-merge.png)
+- Switch back on branch `rebase-conflict` and try rebasing the `master` branch on `rebase-conflict`
+
+```
+      $ git rebase master
+```
+
+- Git will prompt and print out the conflicts occured while rebasing. Below is an illustration.
+
+|![Rebase printed out conflicts](/pics/rebase-printed-out-conflict.png)|
+|----------------------------------------------------------------------|
+
+- Then git create a temporary `detached HEAD` for conclicts resolution. You can check that branch bealow.
+
+```
+      $ git branch
+```
+
+|![Temporary Detached Head](/pics/temporary-rebase-conflict-resolution-branch.png)|
+|---------------------------------------------------------------------------------|
+
+- Let rebase with conflicts resolution
+
+As git is now pointing to the the detached HEAD, let use a mergetool to resolve conflicts.
+
+```
+      $ git mergetool
+```
+
+|![Temporary Detached Head](/pics/rebase-merge-conflicts.png)|
+|------------------------------------------------------------|
+
+- After resolving conflicts, continue the rebase by running the below command
+
+```
+      $ git rebase --conitnue
+```
+
+- Print out the log history  then notice that commits from `master` are now in the base (*parent commits*) for `rebase-conflict`
+
+```
+      $ git log --oneline --graph --decorate --all
+```
+
+The below figure shows the result
+
+|![Reabse with Conflicts Resolutin Done](/pics/rebase-merge-conflicts-done.png)|
+|------------------------------------------------------------------------------|
 
 
 
